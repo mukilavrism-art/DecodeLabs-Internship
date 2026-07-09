@@ -1,7 +1,11 @@
 from flask import Flask, request, render_template_string
+from dotenv import load_dotenv
 import google.generativeai as genai
+import os
 
-API_KEY = "AQ.Ab8RN6KukPe50MMoA_OSTO6Vd1k4scSKaV8ZkM3bbQaPBuY7rw"
+load_dotenv()
+
+API_KEY = os.getenv("API_KEY")
 
 genai.configure(api_key=API_KEY)
 
